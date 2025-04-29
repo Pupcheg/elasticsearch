@@ -65,7 +65,7 @@ class DockerFileAttributes implements PosixFileAttributes {
 
     @Override
     public boolean isSymbolicLink() {
-        return isDirectory;
+        return isSymbolicLink;
     }
 
     @Override

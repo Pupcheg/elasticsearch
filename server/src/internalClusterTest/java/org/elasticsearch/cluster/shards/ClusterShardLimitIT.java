@@ -49,15 +49,9 @@ public class ClusterShardLimitIT extends ESIntegTestCase {
     public void testMinimumPerNode() {
         int negativeShardsPerNode = between(-50_000, 0);
         try {
-            if (frequently()) {
-                clusterAdmin().prepareUpdateSettings(TEST_REQUEST_TIMEOUT, TEST_REQUEST_TIMEOUT)
-                    .setPersistentSettings(Settings.builder().put(shardsPerNodeKey, negativeShardsPerNode).build())
-                    .get();
-            } else {
-                clusterAdmin().prepareUpdateSettings(TEST_REQUEST_TIMEOUT, TEST_REQUEST_TIMEOUT)
-                    .setPersistentSettings(Settings.builder().put(shardsPerNodeKey, negativeShardsPerNode).build())
-                    .get();
-            }
+            clusterAdmin().prepareUpdateSettings(TEST_REQUEST_TIMEOUT, TEST_REQUEST_TIMEOUT)
+                .setPersistentSettings(Settings.builder().put(shardsPerNodeKey, negativeShardsPerNode).build())
+                .get();
             fail("should not be able to set negative shards per node");
         } catch (IllegalArgumentException ex) {
             assertEquals(

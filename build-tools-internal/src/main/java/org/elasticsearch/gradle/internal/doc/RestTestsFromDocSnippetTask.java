@@ -244,10 +244,10 @@ public abstract class RestTestsFromDocSnippetTask extends DocSnippetTask {
                 if (previousTest == null || previousTest.path().equals(test.path()) == false) {
                     throw new InvalidUserDataException("// TEST[continued] " + "cannot be on first snippet in a file: " + test);
                 }
-                if (previousTest != null && previousTest.testSetup()) {
+                if (previousTest.testSetup()) {
                     throw new InvalidUserDataException("// TEST[continued] " + "cannot immediately follow // TESTSETUP: " + test);
                 }
-                if (previousTest != null && previousTest.testSetup()) {
+                if (previousTest.testTearDown()) {
                     throw new InvalidUserDataException("// TEST[continued] " + "cannot immediately follow // TEARDOWN: " + test);
                 }
             } else {

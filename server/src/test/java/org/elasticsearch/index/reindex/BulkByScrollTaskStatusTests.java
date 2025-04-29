@@ -186,11 +186,7 @@ public class BulkByScrollTaskStatusTests extends AbstractXContentTestCase<BulkBy
     @Override
     protected BulkByScrollTask.Status doParseInstance(XContentParser parser) throws IOException {
         XContentParser.Token token;
-        if (parser.currentToken() == XContentParser.Token.START_OBJECT) {
-            token = parser.nextToken();
-        } else {
-            token = parser.nextToken();
-        }
+        token = parser.nextToken();
         ensureExpectedToken(XContentParser.Token.START_OBJECT, token, parser);
         token = parser.nextToken();
         ensureExpectedToken(XContentParser.Token.FIELD_NAME, token, parser);

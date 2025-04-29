@@ -78,9 +78,7 @@ public class MultiLineStringBuilder extends ShapeBuilder<JtsGeometry, org.elasti
             sb.append(GeoWKTParser.EMPTY);
         } else {
             sb.append(GeoWKTParser.LPAREN);
-            if (lines.size() > 0) {
-                sb.append(ShapeBuilder.coordinateListToWKT(lines.get(0).coordinates));
-            }
+            sb.append(ShapeBuilder.coordinateListToWKT(lines.get(0).coordinates));
             for (int i = 1; i < lines.size(); ++i) {
                 sb.append(GeoWKTParser.COMMA);
                 sb.append(ShapeBuilder.coordinateListToWKT(lines.get(i).coordinates));

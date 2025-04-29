@@ -367,7 +367,7 @@ public class WellKnownBinary {
                 alts[i] = byteBuffer.getDouble();
             }
         }
-        if (linearRingNeedsCoerced(lats, lons, alts, coerce)) {
+        if (linearRingNeedsCoerced(lons, lats, alts, coerce)) {
             lons = coerce(lons);
             lats = coerce(lats);
             if (hasZ) {

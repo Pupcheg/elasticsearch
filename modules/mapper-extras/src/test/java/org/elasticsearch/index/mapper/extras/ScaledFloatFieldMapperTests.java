@@ -33,6 +33,7 @@ import org.elasticsearch.xcontent.XContentBuilder;
 import org.elasticsearch.xcontent.XContentFactory;
 import org.elasticsearch.xcontent.XContentType;
 import org.junit.AssumptionViolatedException;
+import org.junit.function.ThrowingRunnable;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -515,7 +516,11 @@ public class ScaledFloatFieldMapperTests extends NumberFieldMapperTests {
          * randomDoubleBetween will smear the values out across a wide
          * range of valid values.
          */
-        return randomBoolean() ? randomDoubleBetween(-Float.MAX_VALUE, Float.MAX_VALUE, true) : randomFloat();
+        if (randomBoolean()) {
+            return randomDoubleBetween(-Float.MAX_VALUE, Float.MAX_VALUE, true);
+        } else {
+            return randomFloat();
+        }
     }
 
     public void testEncodeDecodeExactScalingFactor() {

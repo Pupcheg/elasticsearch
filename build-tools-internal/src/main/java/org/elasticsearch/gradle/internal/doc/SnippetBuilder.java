@@ -229,7 +229,7 @@ class SnippetBuilder {
     }
 
     private void assertValidJsonInput(String content) {
-        if (testResponse && ("js" == language || "console-result" == language) && null == skip) {
+        if (testResponse && ("js".equals(language) || "console-result".equals(language)) && null == skip) {
             String quoted = content
                 // quote values starting with $
                 .replaceAll("([:,])\\s*(\\$[^ ,\\n}]+)", "$1 \"$2\"")

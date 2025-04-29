@@ -119,7 +119,12 @@ public final class Maths {
         double tenAtScale = Math.pow(10d, longPrecision);
         double g = n.doubleValue() * tenAtScale;
         Double result = (((n.doubleValue() < 0) ? Math.ceil(g) : Math.floor(g)) / tenAtScale);
-        return n instanceof Float ? result.floatValue() : result;
+
+        if (n instanceof Float) {
+            return result.floatValue();
+        } else {
+            return result;
+        }
     }
 
     // optimise very common cases for round and truncate

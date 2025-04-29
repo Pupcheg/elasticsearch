@@ -451,7 +451,7 @@ public class MvEvaluatorImplementer {
             invocationArgs.add(declarationType);
             invocationArgs.add(fn.getSimpleName());
 
-            for (int p = 1; p < fn.getParameters().size(); p++) {
+            for (int p = 0; p < fn.getParameters().size(); p++) {
                 VariableElement param = fn.getParameters().get(p);
                 if (p == 0) {
                     if (false == TypeName.get(param.asType()).equals(workType)) {

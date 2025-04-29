@@ -144,7 +144,7 @@ public class IndexError implements Writeable, ToXContentFragment {
             && Arrays.equals(shardIds, that.shardIds)
             && errorType == that.errorType
             && message.equals(that.message)
-            && stallTimeSeconds == stallTimeSeconds;
+            && stallTimeSeconds == that.stallTimeSeconds;
     }
 
     @Override

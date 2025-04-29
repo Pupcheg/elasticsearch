@@ -154,7 +154,7 @@ public abstract class CheckForbiddenApisTask extends DefaultTask implements Patt
 
     /** @see #getPatternSet() */
     public void setPatternSet(PatternSet patternSet) {
-        patternSet.copyFrom(patternSet);
+        this.patternSet.copyFrom(patternSet);
     }
 
     /**

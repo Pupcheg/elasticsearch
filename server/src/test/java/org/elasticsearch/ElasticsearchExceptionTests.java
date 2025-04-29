@@ -1353,6 +1353,7 @@ public class ElasticsearchExceptionTests extends ESTestCase {
         do {
             if (expected == null) {
                 assertNull(actual);
+                return;
             } else {
                 assertNotNull(actual);
             }

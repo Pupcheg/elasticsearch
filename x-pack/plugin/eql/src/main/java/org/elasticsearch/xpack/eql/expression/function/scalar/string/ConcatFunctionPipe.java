@@ -38,7 +38,7 @@ public class ConcatFunctionPipe extends Pipe {
             newValues.add(v.resolveAttributes(resolver));
         }
 
-        if (newValues == values) {
+        if (newValues.equals(values)) {
             return this;
         }
 

@@ -349,7 +349,7 @@ final class AzureStorageSettings {
             if (setting.length() > 0) {
                 final int idx = setting.indexOf('=');
                 if (idx == -1 || idx == 0 || idx == settings[i].length() - 1) {
-                    new IllegalArgumentException("Invalid connection string: " + getConnectString());
+                    throw new IllegalArgumentException("Invalid connection string: " + getConnectString());
                 }
                 if (propertyName.equals(setting.substring(0, idx))) {
                     return setting.substring(idx + 1);

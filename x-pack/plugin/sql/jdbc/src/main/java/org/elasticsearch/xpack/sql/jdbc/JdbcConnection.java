@@ -90,7 +90,7 @@ class JdbcConnection implements Connection, JdbcWrapper {
     public void setAutoCommit(boolean autoCommit) throws SQLException {
         checkOpen();
         if (autoCommit == false) {
-            new SQLFeatureNotSupportedException("Non auto-commit is not supported");
+            throw new SQLFeatureNotSupportedException("Non auto-commit is not supported");
         }
     }
 

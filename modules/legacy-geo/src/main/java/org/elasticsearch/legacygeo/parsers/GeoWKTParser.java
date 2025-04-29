@@ -161,8 +161,8 @@ public class GeoWKTParser {
             if (isNumberNext(stream) || (isOpenParen = nextWord(stream).equals(LPAREN))) {
                 coordinates.coordinate(parseCoordinate(stream, ignoreZValue, coerce));
             }
-            if (isOpenParen && nextCloser(stream).equals(RPAREN) == false) {
-                throw new ElasticsearchParseException("expected: " + RPAREN + " but found: " + tokenString(stream), stream.lineno());
+            if (isOpenParen) {
+                nextCloser(stream);
             }
         }
         return coordinates.build();

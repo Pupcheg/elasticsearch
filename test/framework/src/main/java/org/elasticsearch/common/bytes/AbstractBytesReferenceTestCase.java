@@ -710,7 +710,7 @@ public abstract class AbstractBytesReferenceTestCase extends ESTestCase {
                 BytesReference right = sliceRight ? input2.readSlicedBytesReference() : input2.readBytesReference();
                 assertEquals(left, right);
                 if (sliceRight && bytesReference.hasArray()) {
-                    assertSame(right.array(), right.array());
+                    assertSame(right.array(), bytesReference.array());
                 }
             }
         }

@@ -225,9 +225,9 @@ public abstract class DependencyLicensesTask extends DefaultTask {
             if (name.endsWith("-LICENSE") || name.endsWith("-LICENSE.txt")) {
                 // TODO: why do we support suffix of LICENSE *and* LICENSE.txt??
                 licenses.put(name, false);
-            } else if (name.contains("-NOTICE") || name.contains("-NOTICE.txt")) {
+            } else if (name.contains("-NOTICE")) {
                 notices.put(name, false);
-            } else if (name.contains("-SOURCES") || name.contains("-SOURCES.txt")) {
+            } else if (name.contains("-SOURCES")) {
                 sources.put(name, false);
             }
         }
